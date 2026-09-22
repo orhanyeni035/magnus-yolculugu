@@ -1,0 +1,25 @@
+console.log ("selam");
+
+DEĞİŞKENLER 
+
+Değişken nedir?
+
+Değişken, bir bilgiyi saklamak için kullandığın etiketli bir kutu. Kutunun üzerine bir isim yazarsın, içine bir değer koyarsın. Sonra o değere ihtiyacın olduğunda ismini söylemen yeterli.
+
+*let ve const farkı=
+
+let: İçeriği değiştirilebilen kutu.
+
+const: İçeriği bir kez konulduktan sonra değiştirilemeyen kutu. İngilizce "constant", yani sabit kelimesinden gelir.
+-------------------------------------------------------------------------------------------------------
+let fiyat = 285;
+console.log (fiyat); // ekrana 285 yazar ama ardından 
+
+fiyat = 300;  // fiyat artık 300
+console.log (fiyat);  //ekrana 300 yazdırır
+
+------------------------------------------------------------------------------------------------------
+
+const hisseAdi = "THYAO";
+hisseAdi = "ASELS";   // HATA! const değiştirilemez
+
