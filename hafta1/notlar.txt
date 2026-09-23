@@ -104,3 +104,152 @@ console.log("5" + 3);      // 53  → sayı metne çevrilir, birleştirilir
 Yani "5" ile 5 aynı şey değil. Biri metin, diğeri sayı. Bir API'den gelen fiyat metin olarak gelirse, toplama yapmaya çalıştığında saçma sonuçlar alırsın. Bu hatayı ileride mutlaka yaşayacaksın; şimdi görmen iyi.
 
 ------------------------------------------------------------------------------------------------------
+
+Operatörler — Not Özeti (9. Adım)
+1. Aritmetik operatörler
+Operatör	Adı	Örnek	Sonuç
++	Toplama	10 + 3	13
+-	Çıkarma	10 - 3	7
+*	Çarpma	10 * 3	30
+/	Bölme	10 / 3	3.333...
+%	Kalan (mod)	10 % 3	1
+**	Üs alma	10 ** 3	1000
+
+% en çok çift/tek kontrolünde kullanılır: sayi % 2 === 0 ise sayı çifttir.
+
+Kısa yazımlar
+js
+let adet = 5;
+adet++;        // 6   bir artır
+adet--;        // 5   bir azalt
+adet += 10;    // 15  (adet = adet + 10 ile aynı)
+adet -= 3;     // 12
+adet *= 2;     // 24
+2. Karşılaştırma operatörleri
+
+Sonuçları her zaman boolean'dır (true / false).
+
+Operatör	Anlamı
+>	Büyüktür
+<	Küçüktür
+>=	Büyük veya eşit
+<=	Küçük veya eşit
+===	Eşittir (değer + tip)
+!==	Eşit değildir (değer + tip)
+En önemli kural
+js
+285 === "285"   // false → tipler farklı (number vs string)
+285 == "285"    // true  → tipi görmezden gelir, gizlice çevirir
+
+Her zaman === ve !== kullan. == sessizce yanlış sonuç üretir.
+
+> ile >= farkı
+
+islemHacmi > 1000000 → tam 1.000.000 ise false
+islemHacmi >= 1000000 → tam 1.000.000 ise true
+
+3. Mantıksal operatörler
+Operatör	Adı	Ne zaman true olur?
+&&	VE	Her iki taraf da true ise
+||	VEYA	En az bir taraf true ise
+!	DEĞİL	Sonucu tersine çevirir
+js
+isUp && islemHacmi > 1000000   // hem yükseldi hem hacimli
+isUp || isDown                 // ya yükseldi ya düştü
+!isUp                          // yükselmedi
+
+Dikkat: !isUp ile isDown aynı şey değildir. Fiyat hiç değişmediyse !isUp true, isDown ise false olur.
+
+4. Finans hesapları
+js
+const fark = sonKapanis - oncekiKapanis;
+const yuzdeGetiri = (fark / oncekiKapanis) * 100;
+const isUp = sonKapanis > oncekiKapanis;
+
+Fark tek başına yetersizdir; 0.45 TL'lik artış 86 TL'lik hissede küçük, 2 TL'lik hissede büyüktür. Bu yüzden yüzde getiri kullanılır.
+
+5. Dikkat edilecekler
+Sayılarda basamak ayracı yoktur: 2500000 ✅, 2.500.000 ❌
+Ondalık ayracı noktadır: 86.75 ✅, 86,75 ❌
+Ondalıklı sayılarda küçük sapmalar olabilir: 86.75 - 86.30 sonucu 0.4500000000000028 çıkabilir. Bu bilgisayarların ikilik sistemle çalışmasından kaynaklanır, hata değildir.
+Değişken isimlerinde Türkçe karakter kullanma.
+Boolean değişkenlere is ile başla: isUp, isActive.
+------------------------------------------------------------------------------------------------------
+
+                                     KOŞULLAR  (if, else, switch)
+
+Şimdiye kadar yazdığın programlar hep yukarıdan aşağı, aynı şekilde aktı. Koşullarla birlikte programın karar vermeye başlayacak: "Şu durumda bunu yap, değilse şunu yap."
+
+if — en temel karar
+js
+const fiyat = 86.75;
+
+if (fiyat > 80) {
+  console.log("Fiyat 80'in üzerinde");
+}
+
+Yapısı şöyle: if kelimesi, parantez içinde bir koşul, sonra süslü parantezler {} içinde koşul sağlanırsa çalışacak kod.
+
+Kritik nokta: Parantez içindeki ifade true ya da false olarak değerlendirilir. Yani dün öğrendiğin karşılaştırma operatörleri (>, <, ===) tam olarak burada işe yarıyor.
+
+if / else — iki yol
+js
+if (fiyat > 80) {
+  console.log("Yüksek");
+} else {
+  console.log("Düşük");
+}
+
+else'in koşulu yoktur; "yukarıdaki sağlanmadıysa" anlamına gelir.
+
+else if — birden fazla ihtimal
+js
+const getiri = 0.52;
+
+if (getiri > 2) {
+  console.log("Güçlü yükseliş");
+} else if (getiri > 0) {
+  console.log("Yükseliş");
+} else if (getiri === 0) {
+  console.log("Değişmedi");
+} else {
+  console.log("Düşüş");
+}
+
+Önemli kural: JavaScript bunları yukarıdan aşağı sırayla kontrol eder ve ilk uyan koşulda durur, geri kalanlara bakmaz. Bu yüzden sıralama önemlidir. Yukarıdaki örnekte > 2 kontrolünü > 0'ın altına koysaydın, güçlü yükselişleri hiç yakalayamazdın; çünkü 2.5 değeri zaten > 0 koşuluna takılıp orada dururdu.
+
+Süslü parantezler ve girinti
+
+Süslü parantezler {} bir blok oluşturur; koşul sağlandığında çalışacak kodları gruplar. İçerideki satırları iki boşluk içeriden yazmak (girinti) zorunlu değildir ama okunurluk için şarttır. VS Code bunu genelde otomatik yapar.
+
+switch — tek bir değerin farklı halleri
+
+Aynı değişkenin çok sayıda olası değerini kontrol ederken if/else if zinciri uzar. switch bunu düzenler:
+
+js
+const emirTipi = "LIMIT";
+
+switch (emirTipi) {
+  case "MARKET":
+    console.log("Piyasa fiyatından al");
+    break;
+  case "LIMIT":
+    console.log("Belirlenen fiyattan al");
+    break;
+  case "STOP":
+    console.log("Zarar kes emri");
+    break;
+  default:
+    console.log("Bilinmeyen emir tipi");
+}
+case her bir olasılığı temsil eder ve karşılaştırma === mantığıyla yapılır.
+break çok önemli: Yazmazsan JavaScript alttaki case'leri de çalıştırmaya devam eder. Yeni başlayanların klasik hatasıdır.
+default, hiçbir case uymazsa çalışır; else gibi düşün.
+Kısa yazım: ternary
+
+İki seçenekli basit durumlarda tek satırlık bir yazım vardır:
+
+js
+const durum = fiyat > 80 ? "Yüksek" : "Düşük";
+
+Okunuşu: "Koşul doğruysa soru işaretinden sonraki, değilse iki noktadan sonraki değer." Çok kullanılır ama iç içe yazmaktan kaçın, okunmaz hale gelir.
