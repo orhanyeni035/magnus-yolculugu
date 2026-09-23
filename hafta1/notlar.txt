@@ -1,6 +1,6 @@
 console.log ("selam");
 
-DEĞİŞKENLER 
+                                     DEĞİŞKENLER 
 
 Değişken nedir?
 
@@ -23,3 +23,84 @@ console.log (fiyat);  //ekrana 300 yazdırır
 const hisseAdi = "THYAO";
 hisseAdi = "ASELS";   // HATA! const değiştirilemez
 
+
+                                     VERİ TİPLERİ
+
+
+ Değişkenler kutuydu. Şimdi o kutuların içine ne tür şeyler koyabileceğine bakıyoruz. JavaScript'te her değerin bir tipi vardır ve tip, o değerle ne yapabileceğini belirler.
+
+Beş temel tip
+
+1. Number (sayı)
+Tam sayı ve ondalıklı sayı ayrımı yoktur, hepsi number'dır. Ondalık ayracı noktadır, virgül değil.
+
+js
+const fiyat = 285.75;
+const adet = 100;
+
+------------------------------------------------------------------------------------------------------
+
+2. String (metin)
+Tırnak içindeki her şey. Tek tırnak (') veya çift tırnak (") fark etmez, ama bir projede hep aynısını kullanırsın.
+
+js
+const hisseAdi = "THYAO";
+
+Üçüncü bir seçenek daha var: ters tırnak (`). Bunun özel bir gücü var; içine ${} yazarak değişken gömebilirsin:
+
+js
+const hisse = "THYAO";
+const fiyat = 285;
+console.log(`${hisse} fiyatı: ${fiyat} TL`);   // THYAO fiyatı: 285 TL
+Buna template literal denir ve çok kullanacaksın. Ters tırnak Mac'te genelde Option + , ya da klavyene göre sol üstteki tuştadır.
+
+------------------------------------------------------------------------------------------------------
+
+3. Boolean (mantıksal)
+Sadece iki değeri vardır: true ve false. Tırnak içine alınmaz. "Evet/hayır" sorularının cevabını tutar.
+
+js
+const islemGoruyor = true;
+
+
+------------------------------------------------------------------------------------------------------
+
+4. Undefined (tanımsız)
+Kutuyu oluşturdun ama içine bir şey koymadın. JavaScript otomatik olarak bu değeri verir.
+
+js
+let sonFiyat;
+console.log(sonFiyat);   // undefined
+
+------------------------------------------------------------------------------------------------------
+
+5. Null (boş)
+"Burada bilerek hiçbir şey yok" demek. Aradaki fark önemli: undefined "hiç değer verilmedi", null ise "değer olarak boşluk verildi" anlamına gelir. Bir hissenin fiyatı henüz gelmediyse null uygun bir tercihtir.
+
+js
+let kapanisFiyati = null;
+
+------------------------------------------------------------------------------------------------------
+
+Tipi öğrenmek: typeof
+
+Bir değerin tipini merak edersen:
+
+js
+console.log(typeof fiyat);      // number
+console.log(typeof hisseAdi);   // string
+
+------------------------------------------------------------------------------------------------------
+
+Dikkat: + işaretinin iki yüzü
+
+Bu, yeni başlayanların en sık düştüğü tuzak:
+
+js
+console.log(5 + 3);        // 8   → iki sayı toplanır
+console.log("5" + "3");    // 53  → iki metin birleştirilir
+console.log("5" + 3);      // 53  → sayı metne çevrilir, birleştirilir
+
+Yani "5" ile 5 aynı şey değil. Biri metin, diğeri sayı. Bir API'den gelen fiyat metin olarak gelirse, toplama yapmaya çalıştığında saçma sonuçlar alırsın. Bu hatayı ileride mutlaka yaşayacaksın; şimdi görmen iyi.
+
+------------------------------------------------------------------------------------------------------
