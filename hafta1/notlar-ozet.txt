@@ -1,0 +1,56 @@
+console.log ("Merhaba");        
+
+                         DEĞİŞKENLER
+
+LET VE CONST;
+
+Let : İçeriği değiştirilebilen kutu
+Cont : İçeri değiştirilmeyen kutu  "constant" demek
+
+
+                          VERİ TİPLERİ 
+
+NULL  VE UNDEFİNED ;
+
+Null : Değerin bilinçli olarak programcı tarafından "boş" bırakılması 
+
+Undefined : Dil ve sistem tarafından  otomatik olarak  "değer atanmamış " anlamına gelir 
+
+                            === İLE == FARKI NEDİR?
+
+== : Demek eşitlik sağlamak eğer  sayılar eşit değilse false alır. Tırnak içinde olan syılar string konuma göre anlamı değişiyor 
+
+=== katı eşitlik karşılaştırmasıdır hem değerler hem türleri aynı olmalı. Yoksa false alır
+
+== gerekirse tür dönüştürebilir === dönüştürmez
+
+                              İF-ELSE-SWİTCH  
+
+İf : En temel karardır. Bir koşulu kontrol eder. doğru ise süslü parentez içinde sonucu yansıtır
+
+Else : İf koşulunun aksi takdirde yazılacak değeri verir
+
+Switch : Birden fazla if else if else bloğu yazmak yerine daha düzenli ve okunabilir bir alternatif sunar. bu zamanlarda switch kullanıır
+
+switchte break unutulursa bir sonraki case in kodunu çalıştırır.
+
+Break döngüyü kırar , Continue o turu atlar, döngünün bir sonraki turuna geçer
+
+
+                                FOR & WHİLE
+
+For : Tekrar sayısnı ve döngünün kaç kez döneceğini önceden bildiğmiz durumlarda tercih edilir
+Örn : Bir dizinin elemanlarını sırayla gezmek
+
+While : Tekrar sayısının önceden belli olmadığı, döngünün sadece bir koşula bağlı olarak dönmesi gerektiği durumlarda kullanılır 
+Örn: Kullanıcı "çıkış" tuşuna basana kadar veya rastgele bir sayı 5 gelene kadar dönmesi.
+
+
+SONSUZ DÖNGÜ NASIL OLUŞUR NASIL KAÇINIRSIN?: Koşul true kaldığı sürece döngü durmaz. Kaçınmak için döngüde koşulu değiştiren bir adım bulunmalı
+
+DÖNGÜ İÇİNDEN TANIMLANAN DEĞİŞKEN NEDEN DIŞARIDA KULLANILAMAZ?: Let veya Const ile bir değişkeni döngünün içinde oluşturursan, onu sadece döngünün içinde kullanabilirsin. Döngünün dışında da kullanmak istiyorsan, değişkeni döngüden önce oluştur.
+
+YÜZDE GETİRİ NEDEN SADECE FARKTAN DAH KULLANIŞLI?:Yüzde getiri, kazanç veya kaybı başlangıçtaki paraya göre gösterir. Sadece farkı görmek yanıltıcı olabilir; çünkü aynı miktardaki kazanç, başlangıçta yatırılan paraya göre küçük ya da büyük olabilir.
+
+
+

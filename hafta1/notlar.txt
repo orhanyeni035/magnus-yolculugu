@@ -4,7 +4,7 @@ console.log ("selam");
 
 Değişken nedir?
 
-Değişken, bir bilgiyi saklamak için kullandığın etiketli bir kutu. Kutunun üzerine bir isim yazarsın, içine bir değer koyarsın. Sonra o değere ihtiyacın olduğunda ismini söylemen yeterli.
+Değişken, bir bilgiyi saklamak için kullandığın etiketli bir kutu. Kutunun üzerine bir isim yazarsın, içine bir değer koyarsın
 
 *let ve const farkı=
 
@@ -101,8 +101,7 @@ console.log(5 + 3);        // 8   → iki sayı toplanır
 console.log("5" + "3");    // 53  → iki metin birleştirilir
 console.log("5" + 3);      // 53  → sayı metne çevrilir, birleştirilir
 
-Yani "5" ile 5 aynı şey değil. Biri metin, diğeri sayı. Bir API'den gelen fiyat metin olarak gelirse, toplama yapmaya çalıştığında saçma sonuçlar alırsın. Bu hatayı ileride mutlaka yaşayacaksın; şimdi görmen iyi.
-
+Yani "5" ile 5 aynı şey değil. Biri metin, diğeri sayı. Bir API'den gelen fiyat metin olarak gelirse, toplama yapmaya çalıştığında saçma sonuçlar alırsın.
 ------------------------------------------------------------------------------------------------------
 
 Operatörler — Not Özeti (9. Adım)
@@ -193,7 +192,9 @@ Yapısı şöyle: if kelimesi, parantez içinde bir koşul, sonra süslü parant
 Kritik nokta: Parantez içindeki ifade true ya da false olarak değerlendirilir. Yani dün öğrendiğin karşılaştırma operatörleri (>, <, ===) tam olarak burada işe yarıyor.
 
 if / else — iki yol
+
 js
+
 if (fiyat > 80) {
   console.log("Yüksek");
 } else {
