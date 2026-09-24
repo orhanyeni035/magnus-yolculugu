@@ -35,16 +35,36 @@
 
 // }
 
-    let yatirim = 100;
-    let yil = 0;
+    // let yatirim = 100;
+    // let yil = 0;
 
-    for (let i = 1; i <= 10; i++) {
-    yatirim = yatirim * 1.15;
-    console.log(`Yatırımınız ${i}. yılda ${yatirim} TL oldu`);
+    // for (let i = 1; i <= 10; i++) {
+    // yatirim = yatirim * 1.15;
+    // console.log(`Yatırımınız ${i}. yılda ${yatirim} TL oldu`);
+    // }
+    // yatirim = 100;
+    // while  (yatirim < 1000) {
+    //     yatirim = yatirim * 1.15;
+    //     yil++;
+    //     console.log(`Yatırımınız ${yil}. yılda ${yatirim} TL oldu`);
+    // }
+
+    const baslangic = 86;
+    const artis = 0.80;
+    const esik = 95;
+
+
+    let gun = 0;
+    let fiyat = baslangic;
+    
+    while (fiyat < esik) {
+        fiyat += artis;
+        gun++;
     }
-    yatirim = 100;
-    while  (yatirim < 1000) {
-        yatirim = yatirim * 1.15;
-        yil++;
-        console.log(`Yatırımınız ${yil}. yılda ${yatirim} TL oldu`);
+        console.log(`Gün: ${gun} Fiyat: ${fiyat.toFixed(2)}`);
+
+
+    for (let sayi = 1; sayi <= 30; sayi++) {
+       if (sayi % 3 !== 0) continue;
+       console.log(sayi);
     }
