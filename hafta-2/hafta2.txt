@@ -1,0 +1,46 @@
+function selamla (){
+    console.log (" Merhaba")
+}
+ selamla();
+
+
+// *Dışarıdan bilgi almak = to obtain information from outside sources 
+
+function selamla (isim){
+    console.log ( `Merhaba ${isim}`);
+}
+ selamla("Orhan");
+ selamla("Esra");
+
+//  *Return: sonuç döndürmek*
+
+function yazdi (a, b) {
+    console.log(a + b) ; //sadece ekrana yazar
+}
+function topla (a, b) {
+    return a + b ;      // sonucu geri verir
+}
+
+// *Fark şu: console.log bilgiyi ekrana basar ve iş biter. return ise sonucu sana geri verir, sen de onu bir değişkende saklayabilir, başka hesapta kullanabilirsin.
+
+const sonuc = topla(5, 3);      // sonuc = 8
+const ikiKat = topla(5, 3) * 2; // 16
+
+
+// *Ok fonksiyonları (arrow functions)
+
+const topla = (a, b) => {
+    return a + b;
+};
+
+// * Tek satırlık fonksiyonlarda daha da kısalır; süslü parantez ve return düşer:
+
+const topla1 = (a,b) => a+b 
+
+// *Buna örtük return denir. Süslü parantez yoksa, ok işaretinden sonraki ifade otomatik olarak döndürülür. İkinci haftada dizi metotlarında (map, filter) bu yazımı sürekli göreceksin.
+
+function komisyonHesapla (tutar, oran = 0.02 ) {
+    return tutar * oran;
+}
+komisyonHesapla(10000);        // 20 → varsayılan oran kullanıldı
+komisyonHesapla(10000, 0.005); // 50 → verilen oran kullanıldı
