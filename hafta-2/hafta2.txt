@@ -44,3 +44,61 @@ function komisyonHesapla (tutar, oran = 0.02 ) {
 }
 komisyonHesapla(10000);        // 20 → varsayılan oran kullanıldı
 komisyonHesapla(10000, 0.005); // 50 → verilen oran kullanıldı
+
+
+Adım: Diziler (Temel)
+Dizi nedir?
+
+Birden fazla değeri tek bir isim altında, sıralı olarak tutan yapı. Köşeli parantezle yazılır:
+
+js
+const fiyatlar = [100, 103, 106, 105, 104];
+const hisseler = ["THYAO", "ASELS", "ENKA"];
+
+Elemanlara erişmek
+
+Her elemanın bir indeksi (sıra numarası) vardır ve sıfırdan başlar. Bu, yeni başlayanların en sık takıldığı noktadır.
+
+js
+fiyatlar[0]   // 100  → ilk eleman
+fiyatlar[1]   // 103  → ikinci eleman
+fiyatlar[4]   // 104  → beşinci eleman
+fiyatlar[5]   // undefined → böyle bir eleman yok
+
+length — uzunluk
+js
+fiyatlar.length   // 5
+
+Dikkat: length eleman sayısını verir, son indeksi değil. 5 elemanlı bir dizide son indeks 4'tür. Bu yüzden son elemana erişmek için:
+
+fiyatlar[fiyatlar.length - 1]   // 104
+
+Bu kalıbı çok kullanacaksın: "son fiyat" demek genelde budur.
+
+Eleman değiştirmek ve eklemek
+js
+fiyatlar[2] = 110;        // üçüncü elemanı değiştir
+fiyatlar.push(108);       // sona yeni eleman ekle
+fiyatlar.pop();           // sondaki elemanı çıkar
+
+Önemli bir ayrıntı: Dizi const ile tanımlansa bile içeriğini değiştirebilirsin. const, kutunun içeriğini değil, değişkenin hangi diziye işaret ettiğini sabitler. Yani fiyatlar.push(...) çalışır ama fiyatlar = [1,2,3] hata verir.
+
+Dizi üzerinde döngü
+Klasik for
+js
+for (let i = 0; i < fiyatlar.length; i++) {
+  console.log(`${i + 1}. gün: ${fiyatlar[i]} TL`);
+}
+
+i < fiyatlar.length koşuluna dikkat: indeks 0'dan başladığı için <= değil < kullanılır. <= yazarsan son turda undefined alırsın.
+
+for...of — daha okunaklı
+
+Sadece elemanlarla ilgileniyorsan, indekse ihtiyacın yoksa:
+
+js
+for (const fiyat of fiyatlar) {
+  console.log(fiyat);
+}
+
+Hangisini seçersin? İndeks numarasına ihtiyacın varsa klasik for, yoksa for...of.
