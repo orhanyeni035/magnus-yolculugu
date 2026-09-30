@@ -1,3 +1,6 @@
+// 17. ADIM — Hata yönetimi (try, catch, throw, finally)
+
+// 1) Kendi kuralını throw ile dayatan fonksiyon
 function yuzdeGetiri(onceki, son) {
   if (onceki <= 0) {
     throw new Error("Önceki kapanış sıfırdan büyük olmalıdır.");
@@ -5,12 +8,16 @@ function yuzdeGetiri(onceki, son) {
 
   return ((son - onceki) / onceki) * 100;
 }
+
+// 2) Geçerli değerlerle — catch çalışmaz
 try {
   const sonuc = yuzdeGetiri(100, 110);
   console.log(sonuc);
 } catch (hata) {
   console.error(hata.message);
 }
+
+// 3) Hatalı değerle — catch devreye girer, program ÇÖKMEZ
 try {
   const sonuc = yuzdeGetiri(0, 110);
   console.log(sonuc);
@@ -20,6 +27,7 @@ try {
 
 console.log("Program devam ediyor");
 
+// 4) İki ayrı kural kontrol eden fonksiyon
 function fiyatKontrol(fiyat) {
   if (typeof fiyat !== "number") {
     throw new Error("Fiyat sayı olmalı");
@@ -31,8 +39,10 @@ function fiyatKontrol(fiyat) {
 
   return true;
 }
+
+// 5) Üç senaryoyu da dene
 try {
-  console.log(fiyatKontrol(285.50));
+  console.log(fiyatKontrol(285.5));
 } catch (hata) {
   console.error(hata.message);
 }
@@ -48,8 +58,10 @@ try {
 } catch (hata) {
   console.error(hata.message);
 }
+
+// 6) finally — hata olsa da olmasa da çalışır
 try {
-  fiyatKontrol(-50); // Hata fırlatır
+  fiyatKontrol(-50);
 } catch (hata) {
   console.error(hata.message);
 } finally {
@@ -57,18 +69,20 @@ try {
 }
 
 try {
-  fiyatKontrol(285.50); // Geçerli
+  fiyatKontrol(285.5);
 } catch (hata) {
   console.error(hata.message);
 } finally {
   console.log("İkinci çağrının finally bloğu çalıştı");
 }
+
+// 7) Gerçek senaryo: bozuk kayıtlar tüm işi durdurmaz
 const hisseler = [
-  { kod: "THYAO", fiyat: 285.50 },
+  { kod: "THYAO", fiyat: 285.5 },
   { kod: "ASELS", fiyat: null },
   { kod: "BIMAS" }, // fiyat anahtarı yok
-  { kod: "TUPRS", fiyat: "165" },
-  { kod: "SISE", fiyat: 45.60 }
+  { kod: "TUPRS", fiyat: "165" }, // metin, sayı değil
+  { kod: "SISE", fiyat: 45.6 },
 ];
 
 let basariliSayisi = 0;
