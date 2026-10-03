@@ -1,7 +1,6 @@
 const baslangicFiyati = 50;
 const gunlukArtis = 1.5;
 
-
 for (let gun = 1; gun <= 10; gun++) {
   const fiyat = baslangicFiyati + (gun - 1) * gunlukArtis;
   console.log(`${gun}. gün: ${fiyat.toFixed(2)} TL`);

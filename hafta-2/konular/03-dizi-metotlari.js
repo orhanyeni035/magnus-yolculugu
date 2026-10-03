@@ -36,8 +36,6 @@ console.log("En düşük fiyat:", siraliFiyatlar[0]);
 console.log("En yüksek fiyat:", siraliFiyatlar[siraliFiyatlar.length - 1]);
 
 // 7) Zincirleme — önce ele, sonra dönüştür
-const komisyonluFiyatlar = fiyatlar
-  .filter((f) => f > 80)
-  .map((f) => f * 1.002);
+const komisyonluFiyatlar = fiyatlar.filter((f) => f > 80).map((f) => f * 1.002);
 
 console.log(komisyonluFiyatlar);

@@ -16,7 +16,7 @@ console.log(typeof kapanisFiyati);
 console.log(
   `${hisseAdi} hissesi şu an ${sonFiyati} TL seviyesinde ve işlem durumu: ${
     isActive ? "açık" : "kapalı"
-  }.`
+  }.`,
 );
 
 // --- Getiri hesabı --------------------------
@@ -76,4 +76,6 @@ while (fiyat <= esik) {
   gun++;
 }
 
-console.log(`Fiyat ${gun}. günde ${esik} TL eşiğini geçti: ${fiyat.toFixed(2)} TL`);
+console.log(
+  `Fiyat ${gun}. günde ${esik} TL eşiğini geçti: ${fiyat.toFixed(2)} TL`,
+);

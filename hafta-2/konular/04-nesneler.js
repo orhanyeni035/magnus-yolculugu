@@ -43,14 +43,14 @@ console.log(hisseKodlari);
 
 // 7) filter — hacmi 1 milyonun üzerindekiler
 const yuksekHacimliHisseler = hisseler.filter(
-  (hisse) => hisse.hacim > 1_000_000
+  (hisse) => hisse.hacim > 1_000_000,
 );
 console.log(yuksekHacimliHisseler);
 
 // 8) reduce — toplam hacim
 const toplamHacim = hisseler.reduce(
   (biriken, hisse) => biriken + hisse.hacim,
-  0
+  0,
 );
 console.log(toplamHacim);
 

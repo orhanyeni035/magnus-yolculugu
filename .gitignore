@@ -1,3 +1,15 @@
+# Sistem dosyaları
 .DS_Store
+
+# Paketler
 node_modules/
+
+# Gizli bilgiler (API anahtarları)
 .env
+
+# Deneme dosyaları GitHub'a yüklenmez
+denemeler/
+
+# İçinde API anahtarı olan dosyalar (3. haftada .env'e taşınacak)
+hafta-2/testler/gunluk-getiri-api.js
+hafta-2/getiri-sayfasi/index.html
