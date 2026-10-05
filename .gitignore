@@ -10,6 +10,5 @@ node_modules/
 # Deneme dosyaları GitHub'a yüklenmez
 denemeler/
 
-# İçinde API anahtarı olan dosyalar (3. haftada .env'e taşınacak)
-hafta-2/testler/gunluk-getiri-api.js
+# İçinde API anahtarı olan dosyalar
 hafta-2/getiri-sayfasi/index.html
