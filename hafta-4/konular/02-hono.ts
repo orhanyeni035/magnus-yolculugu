@@ -1,13 +1,11 @@
 import { Hono } from "hono";
-import { serve } from "@hono/node-server";
+
 
 const app = new Hono();
 
 app.get("/", (c) => c.text("Ana sayfa"));
 app.get("/fiyat", (c) => c.json({hisse: "AAPL", fiyat: 333.69}));
 
-serve({ fetch: app.fetch, port: 3000 });
-console.log("Sunucu calisiyor: http://localhost:3000");
 
 app.get("/hisse/:sembol", (c) => {
     const sembol = c.req.param("sembol");
@@ -21,7 +19,7 @@ const fiyatlar: Record<string, number> = {
 };
 
 app.get("/son-fiyat/:sembol", (c) => {
-    const sembol = c.req.param("sembol");
+    const sembol = c.req.param("sembol").toUpperCase();
     const fiyat = fiyatlar[sembol];
 
     if (fiyat !== undefined) {
@@ -41,3 +39,5 @@ const mumlar : mum [] =[
     { tarih: "2026-09-30", kapanis: 333.02 },
 ];
 app.get("/mumlar", (c) => c.json (mumlar) );
+
+  export default app;
