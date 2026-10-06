@@ -44,3 +44,4 @@ async function sembolGetir(): Promise<string> {
 }
 const fiyat = await sembolGetir();
 console.log(fiyat);
+
