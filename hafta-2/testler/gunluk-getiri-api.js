@@ -1,7 +1,7 @@
 // Günlük getiri hesaplayan program
 process.loadEnvFile();
 const API_ADRESI =
-  "https://financialmodelingprep.com/stable/historical-price-eod/light?symbol=AAPL&from=2026-09-28&to=2026-10-02";
+  "https://financialmodelingprep.com/stable/historical-price-eod/light?symbol=AAPL&from=2026-09-28&to=2026-10-07";
 const API_ANAHTARI = process.env.FMP_ANAHTARI;
 
 const calistir = async () => {

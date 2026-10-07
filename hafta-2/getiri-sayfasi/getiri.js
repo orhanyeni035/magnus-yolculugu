@@ -20,3 +20,10 @@ export const getirileriGetir = async (adres, anahtar) => {
 
   return sonuc;
 };
+
+export const volatiliteHesapla = (getiriler) => {
+  const ortalama = getiriler.reduce((t, g) => t + g, 0) / getiriler.length;
+  const kareler = getiriler.map((g) => (g - ortalama) ** 2);
+  const varyans = kareler.reduce((t, k) => t + k, 0) / (getiriler.length - 1);
+  return Math.sqrt(varyans);
+};
