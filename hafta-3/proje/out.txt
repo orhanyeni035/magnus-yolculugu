@@ -1,3 +1,0 @@
-Sunucu calisiyor: http://localhost:3000
-[11:49:42] Yeni fiyat: 333.08
-[11:49:47] Yeni fiyat: 332.84

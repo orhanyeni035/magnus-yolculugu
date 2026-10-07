@@ -8,7 +8,7 @@ const sunucu = http.createServer((istek, cevap) => {
     cevap.end(JSON.stringify(veri));
     } else if (istek.url === "/fiyatlar") {
     try {
-      const icerik = fs.readFileSync("fiyatlarxxx.json", "utf-8");
+      const icerik = fs.readFileSync("fiyatlar.json", "utf-8");
       cevap.end(icerik);
     } catch (hata) {
       cevap.statusCode = 500;
