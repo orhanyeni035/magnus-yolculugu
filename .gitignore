@@ -3,6 +3,7 @@
 
 # Paketler
 node_modules/
+.venv/
 
 # Gizli bilgiler (API anahtarları)
 .env
